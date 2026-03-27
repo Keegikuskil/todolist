@@ -7,4 +7,6 @@ public class todoList {
     public void lisaÜlesanne(Ülesanne ülesanne) {
         ülesanded.add(ülesanne);
     }
+
+    public void eemaldaÜlesanne(Ülesanne ülesanne)  { ülesanded.remove(ülesanne);}
 }
