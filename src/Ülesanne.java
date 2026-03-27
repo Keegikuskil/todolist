@@ -3,19 +3,25 @@
 public class Ülesanne {
     private String ülesandeSisu;
     private String prioriteet;
-    private boolean kasOnLahendatud;
+    //private boolean kasOnLahendatud;
     //private Date lisamisKuupäev;
     //private Date tähtaeg;
 
+    public String toString()    {
+        return ülesandeSisu + ". Prioriteet - " + prioriteet;
+    }
 
-    public Ülesanne(String ülesandeSisu, String prioriteet, boolean kasOnLahendatud) {
+    public String vormistaFaili()   {
+        return ((prioriteet).strip() + ";" + ülesandeSisu);
+    }
+
+
+    public Ülesanne(String ülesandeSisu, String prioriteet) {
         this.ülesandeSisu = ülesandeSisu;
         this.prioriteet = prioriteet;
-        this.kasOnLahendatud = kasOnLahendatud;
     }
 
-    public void lahenda()   {
-        kasOnLahendatud = true;
-    }
+    //public void lahenda()   {
+        //kasOnLahendatud = true;
 
 }
