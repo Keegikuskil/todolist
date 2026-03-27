@@ -10,7 +10,7 @@ public class Peaklass {
 
         jutustaja.tervita(kasutaja);
         //jutustaja.küsiJaLisaÜlesanne(kasutaja);
-        //jutustaja.näitaÜlesandeid(kasutaja);
+        jutustaja.näitaÜlesandeid(kasutaja);
 
 
 
