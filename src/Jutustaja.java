@@ -21,7 +21,9 @@ public class Jutustaja {
         String ülesandeSisu = sc.nextLine();
         System.out.println("Mis on ülesande prioriteet? (punane, kollane, roheline, valge)");
         String prioriteet = sc.nextLine().strip().toLowerCase();
-        kasutaja.lisaÜlesanne(ülesandeSisu, prioriteet);
+        System.out.println("Mitu korda seda ülesannet lahendada saab?");
+        String kordusteArv = sc.nextLine().strip();
+        kasutaja.lisaÜlesanne(ülesandeSisu, prioriteet,kordusteArv);
         System.out.println("Ülesanne lisatud!");
     }
 

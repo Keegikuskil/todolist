@@ -12,8 +12,8 @@ public class Kasutaja {
         this.ülesanded = ülesanded;
     }
 
-    public void lisaÜlesanne(String ülesandesisu, String prioriteet) {
-        Ülesanne ülesanne = new Ülesanne(ülesandesisu, prioriteet);
+    public void lisaÜlesanne(String ülesandesisu, String prioriteet, String kordusteArv) {
+        Ülesanne ülesanne = new Ülesanne(ülesandesisu, prioriteet, Integer.parseInt(kordusteArv));
         ülesanded.add(ülesanne);
     }
 

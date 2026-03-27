@@ -22,7 +22,7 @@ public class Andmebaas {
             try (Scanner sc = new Scanner(ülesanneteFail))  {
                 while (sc.hasNextLine())   {
                     String[] rida = sc.nextLine().split(";");
-                    Ülesanne ülesanne = new Ülesanne(rida[0], rida[1]);
+                    Ülesanne ülesanne = new Ülesanne(rida[0], rida[1], Integer.parseInt(rida[2]));
                     ülesanded.add(ülesanne);
                 }
             }
