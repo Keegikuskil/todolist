@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Random;
 
@@ -14,9 +16,24 @@ public class TodoList {
         return ülesanded;
     }
 
+    public void näitaÜlesandeid()   {
+        for (Ülesanne ülesanne : ülesanded) {
+            System.out.println(ülesanne);
+        }
+    }
+
     public void lisaÜlesanne(String prioriteet, String ülesandeSisu) {
         Ülesanne ülesanne = new Ülesanne(ülesandeSisu, prioriteet, juhuarv);
         ülesanded.add(ülesanne);
+    }
+
+    public void kirjutaÜlesandedFaili(String failinimi) throws Exception {
+        File fail = new File(failinimi);
+        try (PrintWriter out = new PrintWriter(fail))   {
+            for (Ülesanne ülesanne : ülesanded) {
+                out.println(ülesanne.vormistaFaili());
+            }
+        }
     }
 }
 

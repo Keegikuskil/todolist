@@ -15,8 +15,10 @@ public class Peaklass {
 
         todoList.lisaÜlesanne("punane", "Osta kingituseks kohuke");
 
-        kirjutaÜlesandedFaili(todoList.getÜlesanded(), failinimi);
+        //kirjutaÜlesandedFaili(todoList.getÜlesanded(), failinimi);
     }
+
+
 
 
     private static List<Ülesanne> loeÜlesanded(String failinimi) throws Exception {
@@ -32,14 +34,5 @@ public class Peaklass {
 
         }
         return ülesanded;
-    }
-
-    private static void kirjutaÜlesandedFaili(List<Ülesanne> ülesanded, String failinimi)   throws Exception {
-        File fail = new File(failinimi);
-        try (PrintWriter out = new PrintWriter(fail))   {
-            for (Ülesanne ülesanne : ülesanded) {
-                out.println(ülesanne.vormistaFaili());
-            }
-        }
     }
 }
