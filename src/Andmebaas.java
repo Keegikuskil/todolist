@@ -1,19 +1,14 @@
 import java.io.File;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Andmebaas {
-    private String kasutajanimi;
 
-    public Andmebaas(String kasutajanimi) {
-        this.kasutajanimi = kasutajanimi;
-    }
-
-
-
-    public Kasutaja logiSisse() throws Exception {
+    public Kasutaja logiSisse(String kasutajanimi) throws Exception {
+        kasutajanimi = kasutajanimi.toLowerCase();
         File fail = new File("andmebaas/" + kasutajanimi);
         if (fail.exists()) {
             System.out.println("Tere taas " + kasutajanimi + "!");
@@ -38,12 +33,24 @@ public class Andmebaas {
         }
         else {
             fail.mkdirs();
-            FileWriter ülesanneteKirj = new FileWriter("andmebaas/" + kasutajanimi + "/ülesanded.txt");
-            FileWriter kogemuspunktideKirj = new FileWriter("andmebaas/" + kasutajanimi + "/kogemuspunktid.txt");
+            PrintWriter ülesanneteKirj = new PrintWriter("andmebaas/" + kasutajanimi + "/ülesanded.txt");
+            PrintWriter kogemuspunktideKirj = new PrintWriter("andmebaas/" + kasutajanimi + "/kogemuspunktid.txt");
             System.out.println("Tere tulemast " + kasutajanimi + "!");
             List<Ülesanne> ülesanded = new ArrayList<>();
             Kasutaja kasutaja = new Kasutaja(kasutajanimi, 0, ülesanded);
             return kasutaja;
         }
+    }
+
+    public void salvestaAndmed(Kasutaja kasutaja) throws Exception  {
+        try(PrintWriter ülesanneteKirj = new PrintWriter("andmebaas/" + kasutaja.getKasutajaNimi() + "/ülesanded.txt")) {
+            for (Ülesanne ülesanne : kasutaja.getÜlesanded())   {
+                ülesanneteKirj.println(ülesanne.vormistaFaili());
+            }
+        }
+        try(PrintWriter kogemuspunktideKirj = new PrintWriter("andmebaas/" + kasutaja.getKasutajaNimi() + "/kogemuspunktid.txt"))   {
+            kogemuspunktideKirj.println(kasutaja.getKogemuspunktid());
+        }
+
     }
 }

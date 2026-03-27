@@ -12,7 +12,12 @@ public class Kasutaja {
         this.ülesanded = ülesanded;
     }
 
-    private void lisaKogemuspunkte(int lisaPunktid) {
+    public void lisaÜlesanne(String ülesandesisu, String prioriteet) {
+        Ülesanne ülesanne = new Ülesanne(ülesandesisu, prioriteet);
+        ülesanded.add(ülesanne);
+    }
+
+    public void lisaKogemuspunkte(int lisaPunktid) {
         kogemuspunktid += lisaPunktid;
     }
 
