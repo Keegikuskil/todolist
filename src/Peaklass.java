@@ -26,7 +26,7 @@ public class Peaklass {
         try(Scanner scanner = new Scanner(fail, "UTF-8"))   {
             while (scanner.hasNextLine())   {
                 String[] rida = scanner.nextLine().split(";");
-                Ülesanne ülesanne = new Ülesanne(rida[1], rida[0]);
+                Ülesanne ülesanne = new Ülesanne(rida[1], rida[0], Integer.parseInt(rida[2]));
                 ülesanded.add(ülesanne);
             }
 
@@ -36,9 +36,6 @@ public class Peaklass {
 
     private static void kirjutaÜlesandedFaili(List<Ülesanne> ülesanded, String failinimi)   throws Exception {
         File fail = new File(failinimi);
-        for (Ülesanne ülesanne : ülesanded) {
-            System.out.println(ülesanne);
-        }
         try (PrintWriter out = new PrintWriter(fail))   {
             for (Ülesanne ülesanne : ülesanded) {
                 out.println(ülesanne.vormistaFaili());
