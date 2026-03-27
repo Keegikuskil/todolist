@@ -11,6 +11,10 @@ public class Jutustaja {
         return kasutajaNimi;
     }
 
+    public void tervita(Kasutaja kasutaja)  {
+        System.out.println("Tere, " + kasutaja);
+    }
+
     public void küsiJaLisaÜlesanne(Kasutaja kasutaja)  {
         Scanner sc = new Scanner(System.in);
         System.out.println("Mis on ülesande sisu?");

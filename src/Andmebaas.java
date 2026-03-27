@@ -11,7 +11,6 @@ public class Andmebaas {
         kasutajanimi = kasutajanimi.toLowerCase();
         File fail = new File("andmebaas/" + kasutajanimi);
         if (fail.exists()) {
-            System.out.println("Tere taas " + kasutajanimi + "!");
             File kogemuspunktideFail = new File("andmebaas/" + kasutajanimi + "/kogemuspunktid.txt");
             File ülesanneteFail = new File("andmebaas/" + kasutajanimi + "/ülesanded.txt");
             int kogemuspunktid = 0;
@@ -35,7 +34,6 @@ public class Andmebaas {
             fail.mkdirs();
             PrintWriter ülesanneteKirj = new PrintWriter("andmebaas/" + kasutajanimi + "/ülesanded.txt");
             PrintWriter kogemuspunktideKirj = new PrintWriter("andmebaas/" + kasutajanimi + "/kogemuspunktid.txt");
-            System.out.println("Tere tulemast " + kasutajanimi + "!");
             List<Ülesanne> ülesanded = new ArrayList<>();
             Kasutaja kasutaja = new Kasutaja(kasutajanimi, 0, ülesanded);
             return kasutaja;

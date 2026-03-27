@@ -8,8 +8,11 @@ public class Peaklass {
         String kasutajaNimi = jutustaja.küsiNime();
         Kasutaja kasutaja = andmebaas.logiSisse(kasutajaNimi);
 
-        jutustaja.küsiJaLisaÜlesanne(kasutaja);
-        jutustaja.näitaÜlesandeid(kasutaja);
+        jutustaja.tervita(kasutaja);
+        //jutustaja.küsiJaLisaÜlesanne(kasutaja);
+        //jutustaja.näitaÜlesandeid(kasutaja);
+
+
 
         andmebaas.salvestaAndmed(kasutaja);
 
