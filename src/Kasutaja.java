@@ -38,13 +38,13 @@ public class Kasutaja {
             return "Tegutseja";
         }
         else if (tase < 50) {
-            return "Taskmaster";
+            return "Planeerija";
         }
         else if (tase < 200)  {
-            return "Tegude masin";
+            return "Koordinaator";
         }
         else {
-            return "Hr.ülesanne ise";
+            return "Taskmaster";
         }
     }
 

@@ -9,12 +9,11 @@ public class Peaklass {
         Kasutaja kasutaja = andmebaas.logiSisse(kasutajaNimi);
 
         jutustaja.tervita(kasutaja);
-        //jutustaja.küsiJaLisaÜlesanne(kasutaja);
         jutustaja.näitaÜlesandeid(kasutaja);
 
-
-
-        andmebaas.salvestaAndmed(kasutaja);
+        while (true)    {
+            jutustaja.küsiTegevust(kasutaja, andmebaas);
+        }
 
     }
 }

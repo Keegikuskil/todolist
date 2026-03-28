@@ -4,6 +4,29 @@ import java.util.Scanner;
 public class Jutustaja {
     private String kasutajaNimi;
 
+    public void küsiTegevust(Kasutaja kasutaja, Andmebaas andmebaas) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Mida sa teha soovid?");
+        System.out.println("1 - Lisa ülesanne");
+        System.out.println("2 - Alusta mänguga");
+        System.out.println("3 - Salvesta ja lõpeta");
+        int sisend = Integer.parseInt(sc.nextLine());
+        this.teeTegevus(sisend, kasutaja, andmebaas);
+    }
+
+    private void teeTegevus(int sisend, Kasutaja kasutaja, Andmebaas andmebaas) throws Exception {
+        if (sisend == 1)    {
+            this.küsiJaLisaÜlesanne(kasutaja);
+        }
+        else if (sisend == 2)    {
+            System.out.println("Alustasin mänguga");
+        }
+        else {
+            andmebaas.salvestaAndmed(kasutaja);
+            System.exit(0);
+        }
+    }
+
     public String küsiNime() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Palun sisesta oma kasutajanimi: ");
