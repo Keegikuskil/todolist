@@ -21,7 +21,7 @@ public class Kasutaja {
         return kasutajaNimi + " (" + määraTase() + ", " + määraTiitel() + ")";
     }
 
-    private int määraTase() {
+    protected int määraTase() {
         int tase = Math.round(((float) kogemuspunktid) / 150);
         return tase;
     }
