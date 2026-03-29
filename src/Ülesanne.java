@@ -21,4 +21,14 @@ public class Ülesanne {
         this.prioriteet = prioriteet;
         this.kordusteArv = kordusteArv;
     }
+
+    public java.util.HashMap<String, Integer> prioriteedid() {
+        java.util.HashMap<String, Integer> prioriteetPunktideks = new java.util.HashMap<>;
+        prioriteetPunktideks.put("punane", 200);
+        prioriteetPunktideks.put("kollane", 150);
+        prioriteetPunktideks.put("roheline", 100);
+        prioriteetPunktideks.put("valge", 50);
+        return prioriteetPunktideks;
+    }
+
 }
