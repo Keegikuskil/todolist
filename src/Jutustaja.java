@@ -9,7 +9,8 @@ public class Jutustaja {
         System.out.println("Mida sa teha soovid?");
         System.out.println("1 - Lisa ülesanne");
         System.out.println("2 - Alusta mänguga");
-        System.out.println("3 - Salvesta ja lõpeta");
+        System.out.println("3 - Vaata ülesandeid");
+        System.out.println("4 - Salvesta ja lõpeta");
         int sisend = Integer.parseInt(sc.nextLine());
         this.teeTegevus(sisend, kasutaja, andmebaas);
     }
@@ -20,6 +21,9 @@ public class Jutustaja {
         }
         else if (sisend == 2)    {
             System.out.println("Alustasin mänguga");
+        }
+        else if (sisend == 3)   {
+            this.näitaÜlesandeid(kasutaja);
         }
         else {
             andmebaas.salvestaAndmed(kasutaja);
