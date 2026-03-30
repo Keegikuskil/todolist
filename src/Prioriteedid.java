@@ -8,6 +8,6 @@ public class Prioriteedid {
     "valge", 50);
 
     public int getPunktid() {
-        return
+        return 0;
     }
 }
