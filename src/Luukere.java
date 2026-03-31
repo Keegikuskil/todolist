@@ -1,3 +1,3 @@
-public class Luukere extends Vastane{
+public class Luukere extends Vastane {
     private String pilt;
 }

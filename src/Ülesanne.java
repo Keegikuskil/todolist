@@ -22,4 +22,8 @@ public class Ülesanne {
         this.kordusteArv = kordusteArv;
     }
 
+    public String getPrioriteet() {
+        return prioriteet;
+    }
+
 }
