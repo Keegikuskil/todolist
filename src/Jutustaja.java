@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Random;
@@ -39,11 +40,26 @@ public class Jutustaja {
                     Ülesanne ülesanne = ülesanded.get(ülesandeIndeks);
                     Prioriteedid prioriteedid = new Prioriteedid();
                     int kahju = prioriteedid.getPunktidPrioriteetidest(ülesanne.getPrioriteet());
-                    System.out.println("Kui palju soovid endale selleks ülesandeks aega anda?");
-                    System.out.println("Tegid " + kahju + " punkti kahju!");
-                    slime.saaHaiget(ülesanne);
-                    kogemus += prioriteedid.getPunktidPrioriteetidest(ülesanne.getPrioriteet()) / 4;
-                    System.out.println("Limal on " + slime.getElusid() + " elu");
+                    System.out.println("Kui palju soovid endale selleks ülesandeks aega anda? (minutites)");
+                    int lubatudAeg = Integer.parseInt(sc.nextLine());
+                    System.out.println("Kui oled ülesande lahendanud, vajuta \"enter\"");
+                    long algusAeg = System.currentTimeMillis();
+                    String vastus = sc.nextLine();
+                    long lõpuAeg = System.currentTimeMillis();
+                    if (lubatudAeg > (lõpuAeg - algusAeg) / 1000 / 60) {
+                        System.out.println("Tegid " + kahju + " punkti kahju!");
+                        slime.saaHaiget(ülesanne);
+                        kogemus += prioriteedid.getPunktidPrioriteetidest(ülesanne.getPrioriteet()) / 4;
+                        System.out.println("Limal on " + slime.getElusid() + " elu");
+                    } else {
+                        Random random = new Random();
+                        List<String> surmaSõnumid = new ArrayList<>();
+                        surmaSõnumid.add("Jäid hiljaks! Lima ründas sind");
+                        surmaSõnumid.add("Enne kui sa jõudsid oma relva tõsta suutis lima sind mürgitada");
+                        int suvaSõnumiIndeks = random.nextInt(2);
+                        System.out.println(surmaSõnumid.get(suvaSõnumiIndeks));
+                        break;
+                    }
                     if (slime.elusid <= 0)  {
                         System.out.println("Lima sai surma!");
                         System.out.println("Sa said " + kogemus + " kogemuspunkti!");
