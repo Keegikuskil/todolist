@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class Vastane {
-    int elusid;
+    public int elusid;
 
     Vastane(int elusid) {
         this.elusid = elusid;
