@@ -7,7 +7,7 @@ public class Prioriteedid {
     "roheline", 100,
     "valge", 50);
 
-    public int getPunktid(String prioriteet) {
-        return tabel.get(prioriteet);
+    public int getPunktid() {
+        return
     }
 }
