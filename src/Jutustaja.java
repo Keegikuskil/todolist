@@ -24,6 +24,7 @@ public class Jutustaja {
         }
         else if (sisend == 2)    {
             int kogemus = 0;
+
             Slime slime = new Slime(0);
             slime.prioriteedidEludeks(kasutaja);
             System.out.println("Kuri lima on tekkinud!");
@@ -115,6 +116,17 @@ public class Jutustaja {
         System.out.println("Need on: ");
         for (Ülesanne ülesanne : ülesanded) {
             System.out.println(ülesanne);
+        }
+    }
+
+    public Vastane[] genereeriVastane() {
+        Random random = new Random();
+        int vastaseTüüp = random.nextInt(2);
+        if (vastaseTüüp == 0) {
+            Vastane vastane = new Slime(int elusid);
+        }
+        else if (vastaseTüüp == 1) {
+            Vastane vastane = new Luukere(int elusid);
         }
     }
 }

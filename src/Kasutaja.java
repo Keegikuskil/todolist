@@ -6,6 +6,7 @@ public class Kasutaja {
     private int kogemuspunktid;
     private List<Ülesanne> ülesanded = new ArrayList<>();
     private int elud = 200;
+    private boolean genereeriUusVastane;
 
     public int getElud() {
         return elud;
