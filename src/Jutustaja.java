@@ -34,7 +34,7 @@ public class Jutustaja {
                 Scanner sc = new Scanner(System.in);
                 int valik = Integer.parseInt(sc.nextLine());
                 if (valik == 1)   {
-                    System.out.println("Millist rünnakut plaanid teha? (Sisesta number. 1-kõige ülemine ülesanne jne");
+                    System.out.println("Millist rünnakut plaanid teha? (Sisesta number. 1-kõige ülemine ülesanne, 2-ülevalt teine jne)");
                     this.näitaÜlesandeid(kasutaja);
                     List<Ülesanne> ülesanded = kasutaja.getÜlesanded();
                     int ülesandeIndeks = (Integer.parseInt(sc.nextLine()) - 1);
