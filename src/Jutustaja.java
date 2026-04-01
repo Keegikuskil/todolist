@@ -12,8 +12,8 @@ public class Jutustaja {
         System.out.println("1 - Lisa ülesanne");
         System.out.println("2 - Alusta mänguga");
         System.out.println("3 - Vaata ülesandeid");
-        System.out.println("4 - Salvesta ja lõpeta");
-        System.out.println("5 - Juhend"); //LISADA
+        System.out.println("4 - Juhend");
+        System.out.println("5 - Salvesta ja lõpeta");
         int sisend = Integer.parseInt(sc.nextLine());
         this.teeTegevus(sisend, kasutaja, andmebaas);
     }
@@ -37,7 +37,7 @@ public class Jutustaja {
                     System.out.println("Millist rünnakut plaanid teha? (Sisesta number. 1-kõige ülemine ülesanne jne");
                     this.näitaÜlesandeid(kasutaja);
                     List<Ülesanne> ülesanded = kasutaja.getÜlesanded();
-                    int ülesandeIndeks = Integer.parseInt(sc.nextLine());
+                    int ülesandeIndeks = (Integer.parseInt(sc.nextLine()) - 1);
                     Ülesanne ülesanne = ülesanded.get(ülesandeIndeks);
                     Prioriteedid prioriteedid = new Prioriteedid();
                     int kahju = prioriteedid.getPunktidPrioriteetidest(ülesanne.getPrioriteet());
@@ -76,9 +76,14 @@ public class Jutustaja {
         else if (sisend == 3)   {
             this.näitaÜlesandeid(kasutaja);
         }
-        else {
+        else if (sisend == 5)   {
             andmebaas.salvestaAndmed(kasutaja);
             System.exit(0);
+        }
+        else if(sisend == 4)    {
+            System.out.println("Tegemist on produktiivsust julgustava mänguga, kus sinu ülesanne on hävitada koletis, lahendades erinevaid ülesandeid.");
+            System.out.println("Võitlemiseks, pead esmalt lisama endale ülesandeid, mida sa rünnakuteks kasutad.");
+            System.out.println("Ülesanded teevad vastavalt enda prioriteedile haiget.");
         }
     }
 
