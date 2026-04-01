@@ -5,6 +5,11 @@ public class Kasutaja {
     private String kasutajaNimi;
     private int kogemuspunktid;
     private List<Ülesanne> ülesanded = new ArrayList<>();
+    private int elud = 200;
+
+    public int getElud() {
+        return elud;
+    }
 
     public Kasutaja(String kasutajaNimi, int kogemuspunktid, List<Ülesanne> ülesanded) {
         this.kasutajaNimi = kasutajaNimi;

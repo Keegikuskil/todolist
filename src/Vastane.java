@@ -1,13 +1,24 @@
 import java.util.List;
 
 public class Vastane {
-    void eludeArv(Kasutaja kasutaja) {
-        List<Ülesanne> ülesanded = kasutaja.getÜlesanded();
-        for (int i=0, elusid=0; i<ülesanded.size(); i++) {
-            elusid += prioriteedid().get(ülesanded(i));
-        //võtta ülesanne ning tagastada selle prioriteedi punktiarv prioriteetPunktideks abiga
-        }
+    int elusid;
 
-    };
-    // void saaHaiget();
+    Vastane(int elusid) {
+        this.elusid = elusid;
+    }
+
+    void prioriteedidEludeks(Kasutaja kasutaja) {
+        List<Ülesanne> ülesanded = kasutaja.getÜlesanded();
+        Prioriteedid prioriteedid = new Prioriteedid();
+        int elusid = 0;
+        for (int i=0, elusidJuurde = 0; i<ülesanded.size(); i++) {
+            elusidJuurde = prioriteedid.getPunktidPrioriteetidest(String.valueOf(ülesanded.get(i)));
+            elusid += elusidJuurde;
+        }
+        this.elusid = elusid;
+    }
+    void saaHaiget(Ülesanne ülesanne) {
+        Prioriteedid prioriteedid = new Prioriteedid();
+        this.elusid = this.elusid - prioriteedid.getPunktidPrioriteetidest(String.valueOf(ülesanne.getPrioriteet()));
+    }
 }

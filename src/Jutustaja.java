@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Jutustaja {
     private String kasutajaNimi;
@@ -20,7 +21,23 @@ public class Jutustaja {
             this.küsiJaLisaÜlesanne(kasutaja);
         }
         else if (sisend == 2)    {
-            System.out.println("Alustasin mänguga");
+            int skoor = 0;
+            int kogemus = 0;
+            Slime slime = new Slime(0);
+            System.out.println("Kuri lima on tekkinud!");
+            while (kasutaja.getElud() > 0)  {
+                System.out.println("Vali tegevus:");
+                System.out.println("1 - Ründa");
+                System.out.println("2 - Põgene");
+                Scanner sc = new Scanner(System.in);
+                int valik = Integer.parseInt(sc.nextLine());
+                if (valik == 1)   {
+                    System.out.println("Ründan");
+                } else if (valik == 2) {
+                    break;
+                }
+
+            }
         }
         else if (sisend == 3)   {
             this.näitaÜlesandeid(kasutaja);
