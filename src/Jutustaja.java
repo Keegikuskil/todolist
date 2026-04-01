@@ -21,9 +21,9 @@ public class Jutustaja {
             this.küsiJaLisaÜlesanne(kasutaja);
         }
         else if (sisend == 2)    {
-            int skoor = 0;
             int kogemus = 0;
             Slime slime = new Slime(0);
+            slime.prioriteedidEludeks(kasutaja);
             System.out.println("Kuri lima on tekkinud!");
             while (kasutaja.getElud() > 0)  {
                 System.out.println("Vali tegevus:");
@@ -32,7 +32,24 @@ public class Jutustaja {
                 Scanner sc = new Scanner(System.in);
                 int valik = Integer.parseInt(sc.nextLine());
                 if (valik == 1)   {
-                    System.out.println("Ründan");
+                    System.out.println("Millist rünnakut plaanid teha? (Sisesta number. 1-kõige ülemine ülesanne jne");
+                    this.näitaÜlesandeid(kasutaja);
+                    List<Ülesanne> ülesanded = kasutaja.getÜlesanded();
+                    int ülesandeIndeks = Integer.parseInt(sc.nextLine());
+                    Ülesanne ülesanne = ülesanded.get(ülesandeIndeks);
+                    Prioriteedid prioriteedid = new Prioriteedid();
+                    int kahju = prioriteedid.getPunktidPrioriteetidest(ülesanne.getPrioriteet());
+                    System.out.println("Kui palju soovid endale selleks ülesandeks aega anda?");
+                    System.out.println("Tegid " + kahju + " punkti kahju!");
+                    slime.saaHaiget(ülesanne);
+                    kogemus += prioriteedid.getPunktidPrioriteetidest(ülesanne.getPrioriteet()) / 4;
+                    System.out.println("Limal on " + slime.getElusid() + " elu");
+                    if (slime.elusid <= 0)  {
+                        System.out.println("Lima sai surma!");
+                        System.out.println("Sa said " + kogemus + " kogemuspunkti!");
+                        kasutaja.lisaKogemuspunkte(kogemus);
+                        break;
+                    }
                 } else if (valik == 2) {
                     break;
                 }
