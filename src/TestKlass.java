@@ -12,12 +12,15 @@ public class TestKlass {
         System.out.println(testKasutaja.getElud());
         testKasutaja.lisaÜlesanne("kontrolltööks kordamine", "roheline");
         testKasutaja.lisaÜlesanne("juhendajaga kokkusaamine", "punane");
-        System.out.println(testKasutaja);
         System.out.println(testKasutaja.määraTase());
         System.out.println(testKasutaja.getKasutajaNimi());
         System.out.println(testKasutaja.getÜlesanded());
         System.out.println(testKasutaja.getKogemuspunktid());
 
+        //Jutustaja testimine
+        testJutustaja.tervita(testKasutaja);
+        testJutustaja.näitaÜlesandeid(testKasutaja);
+        testJutustaja.küsiTegevust(testKasutaja, testAndmebaas);
 
     }
 }

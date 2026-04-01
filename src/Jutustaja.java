@@ -96,7 +96,7 @@ public class Jutustaja {
     }
 
     public void tervita(Kasutaja kasutaja)  {
-        System.out.println("Tere, " + kasutaja);
+        System.out.println("Tere, " + kasutaja.getKasutajaNimi() + "!");
     }
 
     public void küsiJaLisaÜlesanne(Kasutaja kasutaja)  {
