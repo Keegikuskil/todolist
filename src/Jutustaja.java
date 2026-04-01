@@ -47,6 +47,7 @@ public class Jutustaja {
                     long algusAeg = System.currentTimeMillis();
                     String vastus = sc.nextLine();
                     long lõpuAeg = System.currentTimeMillis();
+                    kasutaja.eemaldaÜlesanne(ülesanne);
                     if (lubatudAeg > (lõpuAeg - algusAeg) / 1000 / 60) {
                         System.out.println("Tegid " + kahju + " punkti kahju!");
                         slime.saaHaiget(ülesanne);

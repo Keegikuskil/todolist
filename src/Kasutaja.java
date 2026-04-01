@@ -68,4 +68,8 @@ public class Kasutaja {
     public List<Ülesanne> getÜlesanded() {
         return ülesanded;
     }
+
+    public void eemaldaÜlesanne(Ülesanne ülesanne)  {
+        ülesanded.remove(ülesanne);
+    }
 }
