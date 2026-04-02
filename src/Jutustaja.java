@@ -118,15 +118,4 @@ public class Jutustaja {
             System.out.println(ülesanne);
         }
     }
-
-    public Vastane[] genereeriVastane() {
-        Random random = new Random();
-        int vastaseTüüp = random.nextInt(2);
-        if (vastaseTüüp == 0) {
-            Vastane vastane = new Slime(int elusid);
-        }
-        else if (vastaseTüüp == 1) {
-            Vastane vastane = new Luukere(int elusid);
-        }
-    }
 }
